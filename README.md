@@ -6,7 +6,19 @@ rule setting
 https://www.appveyor.com/docs/deployment/github/
 
 
-config
+config build test
 https://github.com/son0nline/testCICD.NET/releases
 
 https://github.com/settings/tokens
+
+
+
+config deploy
+
+https://www.appveyor.com/docs/appveyor-yml/
+
+artifacts:
+- path: dist/installers/*.exe
+  name: myartifact
+deploy:
+  artifacts: myartifact
